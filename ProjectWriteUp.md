@@ -13,6 +13,7 @@ Load the data from 'Graph1.txt' and 'Graph2.txt', and calculate their standard d
 - `Quad.IMU.AX std = 0.51`
 
 Run scenario `06_SensorNoise`
+
 ![Quad Image](./misc/Scenario6.gif)
 
 ### Step 2: Attitude Estimation ###
@@ -25,15 +26,18 @@ Implement the nonlinear complementary filter:
 ### Step 3: Prediction Step ###
 
 1. In `QuadEstimatorEKF.cpp`, implement the state prediction step in the `PredictState()` functon. Run scenario `08_PredictState`.
+
 ![Quad Image](./misc/Scenario8.gif)
 
 2. In `QuadEstimatorEKF.cpp`, calculate the partial derivative of the body-to-global rotation matrix in the function `GetRbgPrime()`. Run scenario `09_PredictionCov`.
+
 ![Quad Image](./misc/Scenario9.gif)
 
 ### Step 4: Magnetometer Update ###
 1. Tune the parameter `QYawStd` (`QuadEstimatorEKF.txt`) for the QuadEstimatorEKF
 2. Implement magnetometer update in the function `UpdateFromMag()`.
 3. Run scenario `10_MagUpdate`.
+
 ![Quad Image](./misc/Scenario10.gif)
 
 ### Step 5: Closed Loop + GPS Update ###
@@ -48,6 +52,7 @@ Quad.UseIdealEstimator = 0
 3. Implement the EKF GPS Update in the function `UpdateFromGPS()`.
 
 4. Run scenario `11_GPSUpdate`
+
 ![Quad Image](./misc/Scenario11_relax.gif)
 
 
@@ -55,6 +60,7 @@ Quad.UseIdealEstimator = 0
 1. Replace `QuadController.cpp` with the controller you wrote in the last project.
 2. Replace `QuadControlParams.txt` with the control parameters you came up with in the last project.
 3. Run scenario `11_GPSUpdate`
+
 ![Quad Image](./misc/Scenario11.gif)
 
 
@@ -89,4 +95,4 @@ See tuned parameters in `config\QuadEstimatorEKF.txt`
 
 8. Re-tune controller Parameters.
 
-See controller implementation in `src\QuadControl.cpp' and tuned parameters in `config\QuadControlParams.txt`
+See controller implementation in `src\QuadControl.cpp` and tuned parameters in `config\QuadControlParams.txt`
